@@ -7,6 +7,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+:root {
+    --color: rgba(255, 0, 0, 1)
+}
+
 body {
     background: radial-gradient(circle, rgba(134,134,134,1) 0%, rgba(0,0,0,1) 45%);
 }
@@ -50,15 +54,18 @@ footer {
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0px 0px 16px 10px rgba(255, 0, 0, 0.692);
+    box-shadow: 0px 0px 16px 5px var(--color);
+    animation: pulse-animation 0.7s infinite;
+    animation-direction: alternate;
+    /* box-shadow: 0px 0px 16px 10px rgba(255, 0, 0, 0.692); */
 }
 
 .change-color {
     width: 35px;
     height: 35px;
     position: absolute;
-    top: 7px;
-    right: 5px;
+    top: 21px;
+    right: 15px;
     background: url("./assets/svg/player/setting.svg") no-repeat center;
     cursor: pointer;
     transition: 0.3s;
@@ -69,29 +76,29 @@ footer {
 }
 
 .color-input {
-    position: inherit;
-    top: 3px;
-    right: 45px;
-    display: none;
+    position: absolute;
+    height: 25px;
+    top: 25px;
+    right: 65px;
+    border: none;
+    cursor: pointer;
+    transform: scale(0);
     transition: 0.3s;
 }
 
 .color-display {
-    display: block;
+    transform: scale(1);
 }
 
 .track-image {
-    /* border: 1px solid yellowgreen; */
     width: 300px;
     height: 300px;
-    
 }
 
 .image {
     width: 100%;
     height: 100%;
     object-fit: none;
-    /* border-radius: 50%; */
 }
 
 .player-controls {
@@ -105,13 +112,13 @@ footer {
 
 .track-info {
     width: 100%;
-    
     height: 50px;
 }
 .band-name {
+    text-shadow: 0 0 3px #EAEAEA;
     font-size: 30px;
     font-weight: 700;
-    color: rgba(255, 0, 0, 1);
+    color: var(--color);
 }
 
 .track-name {
@@ -134,11 +141,13 @@ footer {
 }
 
 .progress-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 100%;
     height: 6px;
-    background: #000;
-    box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.692);
+    background: linear-gradient(0deg, rgba(79,79,79,1) 0%, rgba(0,0,0,1) 86%);
+    box-shadow: 0 0 5px 2px var(--color);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -149,21 +158,25 @@ footer {
 }
 
 .progress-input::-webkit-slider-thumb{
-    background: rgba(255, 0, 0, 1);
+    background: var(--color);
     border-radius: 5px;
     cursor: pointer;
     width:10px;
     height: 20px;
+    box-shadow: 0 0 2px 2px #EAEAEA;
     -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .progress-input::-moz-range-thumb{
-    background: rgba(255, 0, 0, 1);
+    background: var(--color);
     border-radius: 5px;
+    box-shadow: 0 0 2px 2px #EAEAEA;
     cursor: pointer;
     width:10px;
     height: 20px;
     -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .player-buttons {
@@ -186,7 +199,7 @@ footer {
     height: 50px;
     border: 0;
     border-radius: 50%;
-    box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.692);
+    box-shadow: 0 0 5px 2px var(--color);
     cursor: pointer;
     transition: 0.2s;
 }
@@ -224,11 +237,13 @@ footer {
 }
 
 .volume-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 125px;
     height: 6px;
-    background: #000;
-    box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.692);
+    background: linear-gradient(0deg, rgba(79,79,79,1) 0%, rgba(0,0,0,1) 86%);
+    box-shadow: 0 0 5px 2px var(--color);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -239,21 +254,25 @@ footer {
 }
 
 .volume-input::-webkit-slider-thumb{
-    background: rgba(255, 0, 0, 1);
+    background: var(--color);
     border-radius: 5px;
+    box-shadow: 0 0 2px 2px #EAEAEA;
     cursor: pointer;
     width:10px;
     height: 20px;
     -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .volume-input::-moz-range-thumb{
-    background: rgba(255, 0, 0, 1);
+    background: var(--color);
     border-radius: 5px;
+    box-shadow: 0 0 2px 2px #EAEAEA;
     cursor: pointer;
     width:10px;
     height: 20px;
     -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .player-max {
@@ -299,4 +318,13 @@ footer {
 .rss-link:hover {
     filter: invert(26%) sepia(80%) saturate(5000%) hue-rotate(327deg) brightness(55%)
     contrast(300%);
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 5px 1px var(--color);
+    }
+    100% {
+        box-shadow: 0 0 16px 5px var(--color);
+    }
 }
