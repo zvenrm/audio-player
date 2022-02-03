@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Audio-player</title>
+</head>
+<body>
+    <audio src="./assets/audio/Lindemann - Allesfresser.mp3"></audio>
+    <main>
+        <div class="container main-container">
+            <div class="player">
+                <div class="change-color">
+                    <input class="color-input" type="color" >
+                </div>
+                <div class="track-image">
+                    <img class="image" src="./assets/img/Klavier.jpg" alt="track image">
+                </div>
+                <div class="player-controls">
+                    <div class="track-info">
+                        <div class="band-name">Band</div>
+                        <div class="track-name">Track name</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="track-time">
+                            <div class="current-time">1:23</div>
+                            <div class="duration-time">3:45</div>
+                        </div>
+                        <input class="progress-input" type="range" name="progress" min="0" max="100" value="0">
+                    </div>
+                    <div class="player-buttons">
+                        <div class="main-buttons">
+                            <button class="button player-prev"></button>
+                            <button class="button player-play"></button>
+                            <button class="button player-next"></button>
+                            <button class="button player-stop"></button>
+                        </div>
+                        
+                        <button class="button player-mute"></button>
+                        <div class="volume-bar">
+                            <input class="volume-input" type="range" name="volume" min="0" max="100" value="0">
+                        </div>
+                        <button class="button player-max"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-data">
+                <span>©</span><span class="year">2022</span><a class="github-link" href="https://github.com/zvenrm" target="_blank">github</a>
+            </div>
+            <a href="https://rs.school/js-stage0/" class="rss-link" target="_blank"></a>
+        </div>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>
