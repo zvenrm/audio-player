@@ -75,7 +75,7 @@ function durationOfTrack() {
 function currentDuration(){
     let audioTime = audio.currentTime;
     let curTime = Math.floor(audioTime / 60) + ":"
-    if(audioTime % 60 < 10) {
+    if(audioTime % 60 < 9) {
         curTime += '0'
     }
     curTime += Math.round(audioTime % 60)
