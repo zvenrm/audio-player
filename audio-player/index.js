@@ -17,7 +17,27 @@ const volIcon = document.querySelector('.player-max')  //иконка громк
 const volumeBar = document.querySelector('.volume-input') //регулятор громкости
 let color = document.documentElement //доступ к переменной css
 
+function getLocalStorage() {
+    if(localStorage.getItem('volume')) {
+        const vol = localStorage.getItem('volume')
+        audio.volume = vol / 100
+        volumeBar.value = vol
+    }
+    if(localStorage.getItem('theme')) {
+        const theme = localStorage.getItem('theme')
+        color.style.setProperty('--color', theme)
+    }
+}
+window.addEventListener('load', getLocalStorage)
 
+let vol;
+let theme;
+if (localStorage.getItem('volume')){
+    vol = localStorage.getItem('volume')
+}
+if (localStorage.getItem('theme')){
+    theme = localStorage.getItem('theme')
+}
 //-----------------------------------изменение цвета----------------------------------
 function colorRemove(e){
     if (!e.target.classList.contains('change-color') && !e.target.classList.contains('color-input')){
@@ -32,6 +52,7 @@ setting.addEventListener('click', () => {
 })
 inputColor.addEventListener('input', () => {
     color.style.setProperty('--color', inputColor.value)
+    theme = inputColor.value
 })
 //-----------------------------------конец изменения цвета----------------------------------
 
@@ -161,7 +182,6 @@ stopBtn.addEventListener('click', function() {
 
 progressBar.addEventListener('input', function() {
     audio.currentTime = progressBar.value
-    console.log(progressBar.value)
 })
 
 let currentVol;
@@ -184,6 +204,7 @@ volumeBar.addEventListener('input', () => {
         volIcon.classList.remove('player-min')
         volIcon.classList.add('player-zero')
     }
+    vol = volumeBar.value
 })
 
 muteBtn.addEventListener('click', () => {
@@ -200,3 +221,9 @@ muteBtn.addEventListener('click', () => {
 })
 
 audio.addEventListener('loadedmetadata', durationOfTrack)
+
+function setLocalStorage() {
+    localStorage.setItem('volume', vol);
+    localStorage.setItem('theme', theme);
+}
+window.addEventListener('beforeunload', setLocalStorage)

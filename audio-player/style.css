@@ -15,22 +15,6 @@ body {
     background: radial-gradient(circle, rgba(134,134,134,1) 0%, rgba(0,0,0,1) 45%);
 }
 
-footer {
-}
-
-.back {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    filter: blur(3px);
-    z-index: -10;
-}
-
 .container {
     padding: 0 20px;
     max-width: 1440px;
@@ -42,12 +26,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .player {
     position: relative;
     padding: 5px;
-    width: 800px;
+    max-width: 800px;
     height: 310px;
     background-color: #000;
     border-radius: 10px;
@@ -98,8 +83,8 @@ footer {
 
 .image {
     width: 100%;
-    height: 100%;
-    object-fit: none;
+    height: auto;
+    /* object-fit: none; */
 }
 
 .player-controls {
@@ -346,5 +331,26 @@ footer {
     }
     100% {
         box-shadow: 0 0 16px 5px var(--color);
+    }
+}
+
+@media screen and (max-width: 850px){
+    .player {
+        max-width: 700px;
+        height: 210px;
+    }
+
+    .track-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .track-time {
+        margin-top: 20px;
+    }
+
+    .current-time,
+    .duration-time {
+        font-size: 20px;
     }
 }
