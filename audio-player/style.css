@@ -306,12 +306,14 @@ body {
 }
 
 .github-link:hover {
-    color: rgba(255, 0, 0, 0.692);
+    color: var(--color);
 }
 
 .rs{
     height: 60px;
     width: 160px;
+    fill: #fff;
+    transition: 0.3s;
 }
 
 .rs:hover{
