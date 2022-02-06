@@ -47,6 +47,14 @@ const tracks = Object.keys(album)
 
 let track;
 
+function preloadImages() {
+    for(let i = 0; i <= 5; i++) {
+        const img = new Image();
+        img.src = `./assets/img/${album[tracks[i]]}`;
+    }
+}
+preloadImages();
+
 
 window.onload = function() {
     track = 0;
@@ -151,8 +159,9 @@ stopBtn.addEventListener('click', function() {
     player.classList.remove('animation')
 })
 
-progressBar.addEventListener('change', function() {
+progressBar.addEventListener('input', function() {
     audio.currentTime = progressBar.value
+    console.log(progressBar.value)
 })
 
 let currentVol;

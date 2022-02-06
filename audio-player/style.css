@@ -168,6 +168,7 @@ footer {
     box-shadow: 0 0 2px 2px #EAEAEA;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
 }
 
 .progress-input::-moz-range-thumb{
@@ -179,6 +180,7 @@ footer {
     height: 20px;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
 }
 
 .player-buttons {
@@ -269,6 +271,7 @@ footer {
     height: 20px;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
 }
 
 .volume-input::-moz-range-thumb{
@@ -280,6 +283,7 @@ footer {
     height: 20px;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
 }
 
 .player-max {
