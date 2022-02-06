@@ -16,7 +16,6 @@ body {
 }
 
 footer {
-    background-color: #000;
 }
 
 .back {
@@ -152,7 +151,8 @@ footer {
     box-shadow: 0 0 5px 2px var(--color);
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0s;
+    transition: height 0.3s;
 }
 
 .progress-input:hover {
@@ -287,6 +287,15 @@ footer {
     width: 30px;
     height: 30px;
     background: url("./assets/svg/player/vol-up.svg") no-repeat center;
+    cursor: default;
+}
+
+.player-min {
+    background: url("./assets/svg/player/vol-down.svg") no-repeat center;
+}
+
+.player-zero {
+    background: url("./assets/svg/player/vol-zero.svg") no-repeat center;
 }
 
 .footer-container {
