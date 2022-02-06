@@ -309,7 +309,15 @@ body {
     color: rgba(255, 0, 0, 0.692);
 }
 
-.rss-link {
+.rs{
+    height: 60px;
+    width: 160px;
+}
+
+.rs:hover{
+    fill: var(--color);
+}
+/* .rss-link {
     display: block;
     height: 60px;
     width: 160px;
@@ -323,7 +331,7 @@ body {
 .rss-link:hover {
     filter: invert(26%) sepia(80%) saturate(5000%) hue-rotate(327deg) brightness(55%)
     contrast(300%);
-}
+} */
 
 @keyframes pulse-animation {
     0% {
