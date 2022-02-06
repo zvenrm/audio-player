@@ -40,7 +40,7 @@ const album = {
     'Lindemann - Platz Eins.mp3': 'Platz eins.jpg',
     'Rammstein - Deutschland.mp3': 'Deutschland.jpg',
     'Rammstein - Klavier.mp3': 'Klavier.jpg',
-    'Rammstein - Mann Gegen Mann.mp3': 'Mann Gegen Mann.jpg',
+    'Rammstein - Mann Gegen Mann.mp3': 'Mann.jpg',
 }
 
 const tracks = Object.keys(album)
