@@ -244,6 +244,9 @@ playlistTracks.forEach(el => {
         }
         track = tracks.indexOf(el.textContent + '.mp3')
         switchTreck(track)
+        audioPlay()
+        playBtn.classList.add('player-pause')
+        player.classList.add('animation')
     })
 })
 
