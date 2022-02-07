@@ -15,6 +15,8 @@ const stopBtn = document.querySelector('.player-stop')  //кнопка стоп
 const muteBtn = document.querySelector('.player-mute')  //кнопка мута
 const volIcon = document.querySelector('.player-max')  //иконка громкости
 const volumeBar = document.querySelector('.volume-input') //регулятор громкости
+const playlist = document.querySelector('.playlist') //плейлист
+const playlistTracks = document.querySelectorAll('.playlist-track')
 let color = document.documentElement //доступ к переменной css
 
 function getLocalStorage() {
@@ -89,6 +91,12 @@ function switchTreck (numTreck) {
     image.src = './assets/img/' + album[tracks[numTreck]]    //изменение картинки
     band.textContent = tracks[numTreck].split(' - ')[0]
     trackName.textContent = tracks[numTreck].split(' - ')[1].slice(0, -4)
+    playlistTracks.forEach(el => {
+        el.classList.remove('active')
+        if (el.textContent === tracks[numTreck].slice(0, -4)){
+            el.classList.add('active')
+        }
+    })
     audio.currentTime = 0;
     audio.play();
 }
@@ -222,6 +230,26 @@ muteBtn.addEventListener('click', () => {
 })
 
 audio.addEventListener('loadedmetadata', durationOfTrack)
+
+
+//---------------------плейлист-------------------
+
+playlistTracks.forEach(el => {
+    el.addEventListener('click', () => {
+        if (!el.classList.contains('active')){
+            playlistTracks.forEach(elem => {
+                elem.classList.remove('active')
+            })
+            el.classList.add('active')
+        }
+        track = tracks.indexOf(el.textContent + '.mp3')
+        switchTreck(track)
+    })
+})
+
+
+
+//------------------localstorage-----------------
 
 function setLocalStorage() {
     localStorage.setItem('volume', vol);
