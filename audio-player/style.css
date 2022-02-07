@@ -319,21 +319,6 @@ body {
 .rs:hover{
     fill: var(--color);
 }
-/* .rss-link {
-    display: block;
-    height: 60px;
-    width: 160px;
-    background-image: url("./assets/svg/rss.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: 0.3s;
-}
-
-.rss-link:hover {
-    filter: invert(26%) sepia(80%) saturate(5000%) hue-rotate(327deg) brightness(55%)
-    contrast(300%);
-} */
 
 @keyframes pulse-animation {
     0% {

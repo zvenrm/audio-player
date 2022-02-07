@@ -122,6 +122,7 @@ function audioPlay(){
             track++;
             switchTreck(track);
         } else if (audioTime == audioLength && track >= 4) {
+            track = 0
             switchTreck(track); 
         }
     }, 1000)
